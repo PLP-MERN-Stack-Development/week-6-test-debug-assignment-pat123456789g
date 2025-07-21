@@ -1,0 +1,39 @@
+{
+  "name": "mern-testing-week6",
+  "version": "1.0.0",
+  "description": "Week 6 Assignment: Testing and Debugging MERN Stack Application",
+  "main": "server/src/index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
+    "server:dev": "cd server && npm run dev",
+    "client:dev": "cd client && npm run dev",
+    "install-all": "npm install && cd client && npm install && cd ../server && npm install",
+    "test": "npm run test:server && npm run test:client",
+    "test:unit": "npm run test:server:unit && npm run test:client:unit",
+    "test:integration": "npm run test:server:integration && npm run test:client:integration",
+    "test:e2e": "cd client && npm run test:e2e",
+    "test:server": "cd server && npm test",
+    "test:server:unit": "cd server && npm run test:unit",
+    "test:server:integration": "cd server && npm run test:integration",
+    "test:client": "cd client && npm test",
+    "test:client:unit": "cd client && npm run test:unit",
+    "test:client:integration": "cd client && npm run test:integration",
+    "test:coverage": "npm run test:server:coverage && npm run test:client:coverage",
+    "test:server:coverage": "cd server && npm run test:coverage",
+    "test:client:coverage": "cd client && npm run test:coverage",
+    "setup-test-db": "cd server && npm run setup-test-db",
+    "start": "npm run start:server",
+    "start:server": "cd server && npm start",
+    "build": "cd client && npm run build"
+  },
+  "keywords": ["mern", "testing", "debugging", "jest", "cypress", "react", "express", "mongodb"],
+  "author": "PLP Student",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "workspaces": [
+    "client",
+    "server"
+  ]
+}
